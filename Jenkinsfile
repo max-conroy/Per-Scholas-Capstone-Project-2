@@ -16,7 +16,8 @@ pipeline {
     }
 	stage('Terraform') {
 	  steps {
-	    bat 'terraform plan'
+	    bat 'terraform init'
+		bat 'terraform plan'
 	  }
 	}
 	stage('Kubernetes') {
