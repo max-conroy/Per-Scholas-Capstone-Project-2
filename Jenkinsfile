@@ -14,6 +14,11 @@ pipeline {
          }
       }
     }
+	stage('Terraform') {
+	  steps {
+	    bat 'terraform plan'
+	  }
+	}
 	stage('Kubernetes') {
 	  steps {
 	    bat 'kubectl get all'
