@@ -14,5 +14,10 @@ pipeline {
          }
       }
     }
+	stage('Kubernetes') {
+	  steps {
+	    bat 'kubectl get all'
+	  }
+	}
   }
 }
