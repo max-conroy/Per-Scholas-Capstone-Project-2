@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: capstone1deploy
+  name: capstone2deploy
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: capstone1app
+      app: capstone2app
   template:
     metadata:
       labels:
-        app: capstone1app
+        app: capstone2app
     spec:
       containers:
-      - name: capstone1container
-        image: conroy3644/capstone1-webapp:latest
+      - name: capstone2container
+        image: conroy3644/capstone-2:latest:latest
         ports:
         - containerPort: 5000
 
@@ -23,18 +23,17 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: capstone1service
+  name: capstone2service
+  annotations:
+    service.beta.kubernetes.io/aws-load-balancer-type: external
+    service.beta.kubernetes.io/aws-load-balancer-nlb-target-type: ip
+    service.beta.kubernetes.io/aws-load-balancer-scheme: internet-facing
 spec:
   type: LoadBalancer
   selector:
-    app: capstone1app
+    app: capstone2app
   ports:
     - protocol: TCP
       port: 5000
       targetPort: 5000
       nodePort: 31000
-      name: http
-status:
-  loadBalancer:
-    ingress:
-    - ip: 192.168.1.252
