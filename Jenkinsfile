@@ -19,8 +19,9 @@ pipeline {
 	    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: "terraform", accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
           bat 'echo $AWS_ACCESS_KEY_ID'
 		  bat 'echo $AWS_SECRET_ACCESS_KEY'
-		  bat 'terraform init'
-          bat 'terraform plan'
+		  bat 'terraform init -input=false'
+          bat 'terraform plan -out=tfplan -input=false'
+		  bat 'terraform apply -input=false tfplan'
          }
 	  }
 	}
