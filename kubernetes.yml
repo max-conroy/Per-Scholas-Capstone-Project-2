@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: capstone2container
-        image: conroy3644/capstone-2:latest:latest
+        image: conroy3644/capstone-2:latest
         ports:
         - containerPort: 5000
 
