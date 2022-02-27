@@ -16,8 +16,12 @@ pipeline {
     }
 	stage('Terraform') {
 	  steps {
-	    bat 'terraform init'
-		bat 'terraform plan'
+	    withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: "terraform", accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
+          bat 'echo $AWS_ACCESS_KEY_ID'
+		  bat 'echo $AWS_SECRET_ACCESS_KEY'
+		  bat 'terraform init'
+          bat 'terraform plan'
+         }
 	  }
 	}
 	stage('Kubernetes') {
