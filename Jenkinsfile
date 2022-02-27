@@ -22,10 +22,6 @@ pipeline {
 		  bat 'terraform init -input=false'
           bat 'terraform plan -out=tfplan -input=false'
 		  bat 'terraform apply -input=false tfplan'
-		  bat 'aws eks --region $(terraform output -raw region) update-kubeconfig --name $(terraform output -raw cluster_name)'
-		  bat 'echo "tf output: " >> tfout.txt'
-		  bat 'terraform output -raw region >> tfout.txt'
-		  bat 'terraform output -raw cluster_name >> tfout.txt'
          }
 	  }
 	}
