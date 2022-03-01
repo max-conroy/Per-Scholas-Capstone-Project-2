@@ -1,4 +1,4 @@
-#### Maximilian Conroy's repository for the final capstone project in the Per Scholas Cloud DevOps program
+### Maximilian Conroy's repository for the final capstone project in the Per Scholas Cloud DevOps program
 
 ### Goals of this project:
 - Use tools like Terraform, kind, vagrant, Cloud Formation, etc (IaC) to provision a Kubernetes environment.
