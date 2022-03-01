@@ -46,5 +46,6 @@
 ### Use of Kubernetes Metrics-Server for command line monitoring of nodes and pods using command "kubectl top node node_name"
 <img width="511" alt="Kubectl Top Showing Stressed CPU and Memory of EKS Nodes" src="https://user-images.githubusercontent.com/3588520/156103001-d22cffdb-063b-459e-85d4-57dba500406b.png">
 
-### Accessing Kubernetes pod terminals to execute CPU stress-test command "for i in $(seq $(getconf _NPROCESSORS_ONLN)); do yes > /dev/null & done"
+### Accessing Kubernetes pod terminals to execute CPU stress-test
+Using Linux command: for i in $(seq $(getconf _NPROCESSORS_ONLN)); do yes > /dev/null & done
 <img width="813" alt="Stressing Pods Using Linux Yes Command" src="https://user-images.githubusercontent.com/3588520/156103229-83b33891-7a37-42e7-a753-4784f4e74961.png">
