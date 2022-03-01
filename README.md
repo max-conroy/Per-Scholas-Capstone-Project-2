@@ -25,9 +25,9 @@
 ### How the deployment is monitored:
 - Prometheus and Grafana are installed on EKS cluster
 - Both are proxied for local access
-  - <img width="1720" alt="Grafana and Prometheus Configured for Monitoring" src="https://user-images.githubusercontent.com/3588520/156102059-236dcfb8-d116-4bc6-8df5-025ee5140954.png">
+<img width="1720" alt="Grafana and Prometheus Configured for Monitoring" src="https://user-images.githubusercontent.com/3588520/156102059-236dcfb8-d116-4bc6-8df5-025ee5140954.png">
 
 - Grafana dashboards 1860 and 8685 are imported for easy monitoring
-- 
+
 - Discord webhook is created and added to Grafana
 - Alerts are sent to Discord
