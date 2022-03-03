@@ -10,7 +10,7 @@ pipeline {
       steps {
         withCredentials([usernamePassword(credentialsId: 'dockerHub', passwordVariable: 'dockerHubPassword', usernameVariable: 'dockerHubUser')]) {
           bat "docker login -u ${env.dockerHubUser} -p ${env.dockerHubPassword}"
-          bat 'docker push conroy3644/capstone1-webapp:latest'
+          bat 'docker push conroy3644/capstone-2:latest'
         }
       }
     }

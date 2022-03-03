@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: capstone2deploy
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: capstone2app
+  template:
+    metadata:
+      labels:
+        app: capstone2app
+    spec:
+      containers:
+      - name: capstone2container
+        image: conroy3644/maxconroywebsite:latest
+        ports:
+        - containerPort: 80
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: capstone2service
+spec:
+  type: LoadBalancer
+  selector:
+    app: capstone2app
+  ports:
+    - port: 80
+      targetPort: 80
