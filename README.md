@@ -23,6 +23,10 @@
 ### Diagram of pipeline architecture:
 ![DevOps Diagram](https://user-images.githubusercontent.com/3588520/156100057-f7ae73c8-89b8-415c-9a00-335d8b26baa0.png)
 
+### Kubernetes Cluster Fully Deployed:
+Output of the "kubectl get all" command to display the EKS cluster
+<img width="1075" alt="kubectl get all - output" src="https://user-images.githubusercontent.com/3588520/156618435-6b9a7fe0-a76a-4412-bb9a-5e4788d45c0a.png">
+
 ### How the deployment is monitored:
 - Prometheus and Grafana are installed on EKS cluster
 - Both are proxied for local access
